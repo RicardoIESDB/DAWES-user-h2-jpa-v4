@@ -77,91 +77,97 @@
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>🔗 API Tester Simple</h1>
-        <p>Prueba los endpoints haciendo clic en los enlaces</p>
+<div class="header">
+    <h1>🔗 API Tester Simple</h1>
+    <p>Prueba los endpoints haciendo clic en los enlaces</p>
+</div>
+
+<!-- GET Endpoints -->
+<div class="section">
+    <h2>📥 GET Endpoints</h2>
+
+    <div class="endpoint-group">
+        <div class="endpoint-title">Obtener todos los usuarios</div>
+        <a href="/userh2jpav4/users" class="endpoint-link">
+            <span class="method method-get">GET</span>/userh2jpav4/users
+        </a>
     </div>
 
-    <!-- GET Endpoints -->
-    <div class="section">
-        <h2>📥 GET Endpoints</h2>
-        
-        <div class="endpoint-group">
-            <div class="endpoint-title">Obtener todos los usuarios</div>
-            <a href="/userh2jpav4/users" class="endpoint-link" >
-                <span class="method method-get">GET</span>/userh2jpav4/users
-            </a>
-        </div>
-
-        <div class="endpoint-group">
-            <div class="endpoint-title">Buscar por ID</div>
-            <a href="/userh2jpav4/users/2" class="endpoint-link" >
-                <span class="method method-get">GET</span>/userh2jpav4/users/2
-            </a>
-            <a href="/userh2jpav4/users/mayor/7" class="endpoint-link" >
-                <span class="method method-get">GET</span>/userh2jpav4/users/mayor/7
-            </a>
-            <a href="/userh2jpav4/users/999" class="endpoint-link" >
-                <span class="method method-get">GET</span>/userh2jpav4/users/999 (no existe, devuelve null)
-            </a>
-        </div>
-        
-        <div class="endpoint-group">
-            <div class="endpoint-title">Contar usuarios</div>
-            <a href="/userh2jpav4/users/count" class="endpoint-link" >
-                <span class="method method-get">GET</span>/userh2jpav4/users/count
-            </a>
-        </div>        
-
+    <div class="endpoint-group">
+        <div class="endpoint-title">Buscar por ID</div>
+        <a href="/userh2jpav4/users/2" class="endpoint-link">
+            <span class="method method-get">GET</span>/userh2jpav4/users/2
+        </a>
+        <a href="/userh2jpav4/users/mayor/7" class="endpoint-link">
+            <span class="method method-get">GET</span>/userh2jpav4/users/mayor/7
+        </a>
+        <a href="/userh2jpav4/users/999" class="endpoint-link">
+            <span class="method method-get">GET</span>/userh2jpav4/users/999 (no existe, devuelve null)
+        </a>
     </div>
 
-
-    <!-- Error Testing -->
-    <div class="section">
-        <h2>⚠️ Pruebas de Error</h2>
-        
-        <div class="endpoint-group">
-            <div class="endpoint-title">URLs que no existen</div>
-            <a href="/userh2jpav4/static-noexiste" class="endpoint-link" >
-                <span class="method method-get">GET</span>/userh2jpav4/static-noexiste  (Error 404 de static)
-            </a>
-        </div>
-
-        <div class="endpoint-group">
-            <div class="endpoint-title">Tipo de parámetro incorrecto</div>
-            <a href="/userh2jpav4/users/primero" class="endpoint-link" >
-                <span class="method method-get">GET</span>/userh2jpav4/users/primero (Error 400)
-            </a>
-        </div>
-
+    <div class="endpoint-group">
+        <div class="endpoint-title">Contar usuarios</div>
+        <a href="/userh2jpav4/users/count" class="endpoint-link">
+            <span class="method method-get">GET</span>/userh2jpav4/users/count
+        </a>
     </div>
 
-    <!-- Bases de Datos -->
-    <div class="section">
-        <h2>🛢️H2 Database</h2>
-        
-        <div class="endpoint-group">
-            <div class="endpoint-title">H2 Console</div>
-            <a href="/userh2jpav4/h2-console" class="endpoint-link" >
-                <span class="method method-get">GET</span>/userh2jpav4/h2-console
-            </a>
-        </div>
-
+    <div class="endpoint-group">
+        <div class="endpoint-title">Filtrar por edad</div>
+        <a href="/userh2jpav4/users/age/hasta/23" class="endpoint-link">
+            <span class="method method-get">GET</span>/userh2jpav4/users/age/hasta/23
+        </a>
     </div>
-   
-    <div style="text-align: center;">
-        <a href="/userh2jpav4" class="home-link">🏠 Volver al Inicio</a>
+</div>
+
+
+<!-- Error Testing -->
+<div class="section">
+    <h2>⚠️ Pruebas de Error</h2>
+
+    <div class="endpoint-group">
+        <div class="endpoint-title">URLs que no existen</div>
+        <a href="/userh2jpav4/static-noexiste" class="endpoint-link">
+            <span class="method method-get">GET</span>/userh2jpav4/static-noexiste (Error 404 de static)
+        </a>
     </div>
 
-    <script>
-        // Añade  a todos los enlaces si no lo tienen
-        /*
-        document.querySelectorAll('.endpoint-link').forEach(link => {
-            if (!link.getAttribute('target')) {
-                link.setAttribute('target', '_blank');
-            }
-        });
-        */
-    </script>
+    <div class="endpoint-group">
+        <div class="endpoint-title">Tipo de parámetro incorrecto</div>
+        <a href="/userh2jpav4/users/primero" class="endpoint-link">
+            <span class="method method-get">GET</span>/userh2jpav4/users/primero (Error 400)
+        </a>
+    </div>
+
+</div>
+
+<!-- Bases de Datos -->
+<div class="section">
+    <h2>🛢️H2 Database</h2>
+
+    <div class="endpoint-group">
+        <div class="endpoint-title">H2 Console</div>
+        <a href="/userh2jpav4/h2-console" class="endpoint-link">
+            <span class="method method-get">GET</span>/userh2jpav4/h2-console
+        </a>
+    </div>
+
+</div>
+
+<div style="text-align: center;">
+    <a href="/userh2jpav4" class="home-link">🏠 Volver al Inicio</a>
+</div>
+
+<script>
+    // Añade  a todos los enlaces si no lo tienen
+    /*
+    document.querySelectorAll('.endpoint-link').forEach(link => {
+        if (!link.getAttribute('target')) {
+            link.setAttribute('target', '_blank');
+        }
+    });
+    */
+</script>
 </body>
 </html>

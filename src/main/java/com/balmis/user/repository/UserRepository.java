@@ -47,6 +47,6 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     @Query(value = "SELECT * FROM users WHERE id > :id", nativeQuery = true)
     List<User> findSqlByIdGrThan(@Param("id") int userId);
 
-    @Query(value = "SELECT * FROM users WHERE edad < :edad", nativeQuery = true)
+    @Query(value = "SELECT * FROM users WHERE age <= :edad", nativeQuery = true)
     List<User> edadHasta(@Param("edad") int edadUsuario);
 }
