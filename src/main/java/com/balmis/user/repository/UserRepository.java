@@ -49,4 +49,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 
     @Query(value = "SELECT * FROM users WHERE age <= :edad", nativeQuery = true)
     List<User> edadHasta(@Param("edad") int edadUsuario);
+
+    @Query(value = "SELECT * FROM users WHERE UPPER(name) LIKE CONCAT('%',UPPER(:cadena),'%')", nativeQuery = true)
+    List<User> buscarPorNombre(@Param("cadena") String nombreUsuario);
 }

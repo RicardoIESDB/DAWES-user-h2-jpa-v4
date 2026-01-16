@@ -54,4 +54,9 @@ public class UserController {
     public List<User> mostrarUsuariosConEdadHasta(@PathVariable int edad){
         return userService.usuariosConEdadHasta(edad);
     }
+
+    @GetMapping("/users/name/contiene/{cadena}")
+    public List<User> mostrarUsuariosPorNombre(@PathVariable String cadena){
+        return userService.findByNameContains(cadena);
+    }
 }
