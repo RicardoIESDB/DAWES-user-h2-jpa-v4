@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 public interface UserRepository extends JpaRepository<User, Integer> {
@@ -50,6 +51,9 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     @Query(value = "SELECT * FROM users WHERE age <= :edad", nativeQuery = true)
     List<User> edadHasta(@Param("edad") int edadUsuario);
 
-    @Query(value = "SELECT * FROM users WHERE UPPER(name) LIKE CONCAT('%',UPPER(:cadena),'%')", nativeQuery = true)
+    @Query(value = "SELECT * FROM users WHERE UPPER(name) LIKE CONCAT('%', UPPER(:cadena),'%')", nativeQuery = true)
     List<User> buscarPorNombre(@Param("cadena") String nombreUsuario);
+
+    @Query(value = "SELECT * FROM users WHERE LOWER(email) LIKE CONCAT('%', LOWER(:dominio))",nativeQuery = true)
+    List<User> buscarPorDominio(@Param("dominio") String valorDominio);
 }

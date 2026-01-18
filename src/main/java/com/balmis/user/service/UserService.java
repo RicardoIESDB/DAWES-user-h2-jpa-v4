@@ -36,4 +36,6 @@ public class UserService {
     public List<User> usuariosConEdadHasta(int edad){return userRepository.edadHasta(edad);}
 
     public List<User> findByNameContains(String cadena){return userRepository.buscarPorNombre(cadena);}
+
+    public List<User> buscarUsuarioPorDominio(String dominio){return userRepository.buscarPorDominio(dominio);}
 }
